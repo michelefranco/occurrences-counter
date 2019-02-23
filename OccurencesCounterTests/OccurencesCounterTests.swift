@@ -24,11 +24,18 @@ class OccurencesCounterTests: XCTestCase {
         let input = "One"
         let result = manager.occurences(from: input)
         
-        let occcurence = WordOccurence(word: "one", occurence: 1)
+        let occurence = WordOccurence(word: "one", occurence: 1)
         var expected = Set<WordOccurence>()
-        expected.insert(occcurence)
+        expected.insert(occurence)
 
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
+    func testTwoOccurences() {
+        let input = "One two"
+        let result = manager.occurences(from: input)
+        var expected = Set<WordOccurence>()
+    
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }    
 }
