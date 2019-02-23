@@ -4,7 +4,7 @@ struct Prepreprocessor {
     static func words(from text: String) -> [String] {
         let preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         
-        return preprocessingOutcome.components(separatedBy: " ")
+        return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
     }
 }
 
