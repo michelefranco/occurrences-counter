@@ -13,6 +13,8 @@
 		B447C183222184E400B69970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B447C181222184E400B69970 /* LaunchScreen.storyboard */; };
 		B44E71AA2221BCA500E4B06C /* OccurencesCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71A92221BCA500E4B06C /* OccurencesCounterTests.swift */; };
 		B44E71B22221BFA700E4B06C /* book.txt in Resources */ = {isa = PBXBuildFile; fileRef = B44E71B12221BFA700E4B06C /* book.txt */; };
+		B44E71B42221E18A00E4B06C /* OccurencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B32221E18A00E4B06C /* OccurencesManager.swift */; };
+		B44E71B62221E21F00E4B06C /* Occurence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B52221E21F00E4B06C /* Occurence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		B44E71A92221BCA500E4B06C /* OccurencesCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurencesCounterTests.swift; sourceTree = "<group>"; };
 		B44E71AB2221BCA500E4B06C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44E71B12221BFA700E4B06C /* book.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = book.txt; sourceTree = "<group>"; };
+		B44E71B32221E18A00E4B06C /* OccurencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurencesManager.swift; sourceTree = "<group>"; };
+		B44E71B52221E21F00E4B06C /* Occurence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occurence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				B447C17F222184E400B69970 /* Assets.xcassets */,
 				B447C181222184E400B69970 /* LaunchScreen.storyboard */,
 				B447C184222184E400B69970 /* Info.plist */,
+				B44E71B32221E18A00E4B06C /* OccurencesManager.swift */,
+				B44E71B52221E21F00E4B06C /* Occurence.swift */,
 			);
 			path = OccurencesCounter;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			files = (
 				B447C17B222184E200B69970 /* LauncherViewController.swift in Sources */,
 				B447C179222184E200B69970 /* AppDelegate.swift in Sources */,
+				B44E71B42221E18A00E4B06C /* OccurencesManager.swift in Sources */,
+				B44E71B62221E21F00E4B06C /* Occurence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
