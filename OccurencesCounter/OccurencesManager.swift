@@ -1,7 +1,33 @@
 import Foundation
 
+struct Prepreprocessor {
+    static func words(from text: String) -> [String] {
+        let preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        
+        return preprocessingOutcome.components(separatedBy: " ")
+    }
+}
+
 struct OccurencesManager {
-    func occurences(from: String) -> Set<WordOccurence> {
-        return Set<WordOccurence>()
+    func occurences(from text: String) -> Set<WordOccurence> {
+        
+        let words = Prepreprocessor.words(from: text)
+        let dictionary = self.map(from: words)
+        var set = Set<WordOccurence>()
+        
+        dictionary.forEach { word, occurence in
+            let wordOccurences = WordOccurence(word: word, occurence: occurence)
+            set.insert(wordOccurences)
+        }
+        
+        return set
+    }
+    
+    private func map(from words: [String]) -> [String: Int] {
+        return words.reduce(into: [:]) { counts, word in
+            if !word.isEmpty {
+                counts[word, default: 0] += 1
+            }
+        }
     }
 }
