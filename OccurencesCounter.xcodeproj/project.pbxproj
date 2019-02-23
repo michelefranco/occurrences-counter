@@ -81,14 +81,14 @@
 		B447C177222184E200B69970 /* OccurencesCounter */ = {
 			isa = PBXGroup;
 			children = (
-				B44E71B12221BFA700E4B06C /* book.txt */,
+				B447C184222184E400B69970 /* Info.plist */,
 				B447C178222184E200B69970 /* AppDelegate.swift */,
 				B447C17A222184E200B69970 /* LauncherViewController.swift */,
+				B44E71B52221E21F00E4B06C /* Occurence.swift */,
+				B44E71B32221E18A00E4B06C /* OccurencesManager.swift */,
+				B44E71B12221BFA700E4B06C /* book.txt */,
 				B447C17F222184E400B69970 /* Assets.xcassets */,
 				B447C181222184E400B69970 /* LaunchScreen.storyboard */,
-				B447C184222184E400B69970 /* Info.plist */,
-				B44E71B32221E18A00E4B06C /* OccurencesManager.swift */,
-				B44E71B52221E21F00E4B06C /* Occurence.swift */,
 			);
 			path = OccurencesCounter;
 			sourceTree = "<group>";
