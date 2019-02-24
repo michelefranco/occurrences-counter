@@ -2,7 +2,7 @@ import XCTest
 @testable import OccurencesCounter
 
 class PrimeNumberTests: XCTestCase {
-
+    
     func testPrimeNumber_negative() {
         let input = -24
         
@@ -11,7 +11,7 @@ class PrimeNumberTests: XCTestCase {
         let expected = false
         XCTAssertEqual(result, expected, "result is wrong for input: \(input)")
     }
-
+    
     func testPrimeNumber_lessThan2() {
         let input = 1
         
@@ -45,7 +45,7 @@ class PrimeNumberTests: XCTestCase {
         input.forEach {
             XCTAssertEqual($0.isPrime, expected, "result is wrong for input: \($0)")
         }
-
+        
     }
     
     func testPrimeNumber_primeSequences() {
