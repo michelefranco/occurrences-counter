@@ -117,4 +117,13 @@ class OccurencesCounterTests: XCTestCase {
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
+    
+    func testTwoOccurencesWithEnglishPossessive() {
+        let input = "Simpson's home"
+        let result = manager.occurences(from: input)
+        
+        var expected = Set<WordOccurence>()
+        
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }
 }
