@@ -3,6 +3,15 @@ import XCTest
 
 class PrimeNumberTests: XCTestCase {
     
+    func testPrimeNumber_lessThan2() {
+        let input = 1
+        
+        let result = input.isPrime
+        
+        let expected = false
+        XCTAssertEqual(result, expected, "result is wrong for input: \(input)")
+    }
+    
     func testPrimeNumber_2() {
         let input = 2
         let result = input.isPrime
