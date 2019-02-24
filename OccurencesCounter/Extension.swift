@@ -2,6 +2,17 @@ import Foundation
 
 extension Int {
     var isPrime: Bool {
-        return false
+        guard self > 1 else { return false }
+        
+        let result: Bool
+        switch self {
+        case 2,3:
+            result = true
+        default:
+            let maxDivider = Int(sqrt(Double(self)))
+            result = (2...maxDivider).contains { self % $0 == 0 }
+        }
+        
+        return result
     }
 }
