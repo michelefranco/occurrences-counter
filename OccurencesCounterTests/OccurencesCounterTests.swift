@@ -71,7 +71,7 @@ class OccurencesCounterTests: XCTestCase {
         let firstOccurence = WordOccurence(word: "one", occurence: 1)
         let secondOccurence = WordOccurence(word: "two", occurence: 1)
         expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        expected.insert(secondOccurence) 
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
