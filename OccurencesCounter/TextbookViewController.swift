@@ -15,6 +15,8 @@ final class TextbookViewController: UIViewController {
     //MARK: UIViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationController?.navigationBar.topItem?.title = "Text Book"
         
         if let bookURL = Bundle.main.url(forResource: "book", withExtension: "txt") {
             let text: String
