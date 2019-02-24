@@ -5,7 +5,7 @@ struct Prepreprocessor {
         var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         
         let symbols = "_,;?!.:()\\[\\]{}*<>/\""
-        preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "[\(symbols)]", with: " ", options: .regularExpression, range: nil)
+        preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "[\(symbols)]|'s", with: " ", options: .regularExpression, range: nil)
         
         return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
     }
