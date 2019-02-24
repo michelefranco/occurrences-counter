@@ -6,8 +6,17 @@ enum Order {
 
 struct OccurencesManager {
     func occurences(from text: String, with order: Order) -> [WordOccurence] {
-        let empty = WordOccurence(word: "", occurence: 1)
-        return [empty]
+        let occurences = self.occurences(from: text)
+        
+        let orderedOccurences: [WordOccurence]
+        switch order {
+        case .crescent:
+            orderedOccurences = occurences.sorted { $0.occurence < $1.occurence  }
+        case .decrescent:
+            orderedOccurences = occurences.sorted { $0.occurence > $1.occurence  }
+        }
+        
+        return orderedOccurences
     }
     
     
