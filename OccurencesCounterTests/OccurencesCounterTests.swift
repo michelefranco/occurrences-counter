@@ -134,4 +134,14 @@ class OccurencesCounterTests: XCTestCase {
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
+    
+    func testTwoOccurencesCrescentOrder() {
+        let input = "one One Two"
+        let result = manager.occurences(from: input, with: .crescent)
+        
+        let firstOccurence = WordOccurence(word: "two", occurence: 2)
+        let expected = [firstOccurence]
+        
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }
 }
