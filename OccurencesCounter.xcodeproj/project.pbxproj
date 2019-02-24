@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B427F3C42222F976009A320B /* Textbook.xib in Resources */ = {isa = PBXBuildFile; fileRef = B427F3C32222F976009A320B /* Textbook.xib */; };
 		B447C179222184E200B69970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447C178222184E200B69970 /* AppDelegate.swift */; };
-		B447C17B222184E200B69970 /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447C17A222184E200B69970 /* LauncherViewController.swift */; };
+		B447C17B222184E200B69970 /* TextbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447C17A222184E200B69970 /* TextbookViewController.swift */; };
 		B447C180222184E400B69970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B447C17F222184E400B69970 /* Assets.xcassets */; };
 		B447C183222184E400B69970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B447C181222184E400B69970 /* LaunchScreen.storyboard */; };
 		B44E71AA2221BCA500E4B06C /* OccurencesCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71A92221BCA500E4B06C /* OccurencesCounterTests.swift */; };
@@ -31,9 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B427F3C32222F976009A320B /* Textbook.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Textbook.xib; sourceTree = "<group>"; };
 		B447C175222184E200B69970 /* OccurencesCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OccurencesCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B447C178222184E200B69970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B447C17A222184E200B69970 /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
+		B447C17A222184E200B69970 /* TextbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextbookViewController.swift; sourceTree = "<group>"; };
 		B447C17F222184E400B69970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B447C182222184E400B69970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B447C184222184E400B69970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +91,8 @@
 			children = (
 				B447C184222184E400B69970 /* Info.plist */,
 				B447C178222184E200B69970 /* AppDelegate.swift */,
-				B447C17A222184E200B69970 /* LauncherViewController.swift */,
+				B447C17A222184E200B69970 /* TextbookViewController.swift */,
+				B427F3C32222F976009A320B /* Textbook.xib */,
 				B44E71B52221E21F00E4B06C /* Occurence.swift */,
 				B44E71B32221E18A00E4B06C /* OccurencesManager.swift */,
 				B44E71B722222F0C00E4B06C /* Preprocessor.swift */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B447C183222184E400B69970 /* LaunchScreen.storyboard in Resources */,
+				B427F3C42222F976009A320B /* Textbook.xib in Resources */,
 				B44E71B22221BFA700E4B06C /* book.txt in Resources */,
 				B447C180222184E400B69970 /* Assets.xcassets in Resources */,
 			);
@@ -212,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B447C17B222184E200B69970 /* LauncherViewController.swift in Sources */,
+				B447C17B222184E200B69970 /* TextbookViewController.swift in Sources */,
 				B447C179222184E200B69970 /* AppDelegate.swift in Sources */,
 				B44E71B822222F0C00E4B06C /* Preprocessor.swift in Sources */,
 				B44E71C42222395C00E4B06C /* Extension.swift in Sources */,
