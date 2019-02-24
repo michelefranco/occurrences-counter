@@ -1,19 +1,17 @@
 import Foundation
 
-struct Prepreprocessor {
-    static func words(from text: String) -> [String] {
-        var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        
-        let symbols = "_,;?!.:()\\[\\]{}*<>/\""
-        preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "[\(symbols)]|'s", with: " ", options: .regularExpression, range: nil)
-        
-        return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
-    }
+enum Order {
+    case crescent, decrescent
 }
 
 struct OccurencesManager {
+    func occurences(from text: String, with order: Order) -> [WordOccurence] {
+        let empty = WordOccurence(word: "", occurence: 1)
+        return [empty]
+    }
+    
+    
     func occurences(from text: String) -> Set<WordOccurence> {
-        
         let words = Prepreprocessor.words(from: text)
         let dictionary = self.map(from: words)
         var set = Set<WordOccurence>()

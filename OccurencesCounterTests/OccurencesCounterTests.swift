@@ -3,13 +3,6 @@ import XCTest
 
 class OccurencesCounterTests: XCTestCase {
     let manager = OccurencesManager()
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
     
     func testEmptyString() {
         let input = ""
@@ -127,6 +120,17 @@ class OccurencesCounterTests: XCTestCase {
         let secondOccurence = WordOccurence(word: "home", occurence: 1)
         expected.insert(firstOccurence)
         expected.insert(secondOccurence)
+                
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }
+    
+    func testTwoOccurencesDecrescentOrder() {
+        let input = "one One Two"
+        let result = manager.occurences(from: input, with: .decrescent)
+        
+        let firstOccurence = WordOccurence(word: "one", occurence: 2)
+        let secondOccurence = WordOccurence(word: "two", occurence: 1)
+        let expected = [firstOccurence, secondOccurence]
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
