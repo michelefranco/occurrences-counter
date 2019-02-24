@@ -53,4 +53,11 @@ class OccurencesCounterTests: XCTestCase {
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
+    
+    func testOneWordTwoOccurencesMultipleSpaces() {
+        let input = "  One      one"
+        let result = manager.occurences(from: input)
+        var expected = Set<WordOccurence>()
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }
 }
