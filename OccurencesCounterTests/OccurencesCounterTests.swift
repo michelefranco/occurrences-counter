@@ -92,6 +92,10 @@ class OccurencesCounterTests: XCTestCase {
         let input = "One,two;ONE:twO.one?two!"
         let result = manager.occurences(from: input)
         var expected = Set<WordOccurence>()
+        let firstOccurence = WordOccurence(word: "one", occurence: 3)
+        let secondOccurence = WordOccurence(word: "two", occurence: 3)
+        expected.insert(firstOccurence)
+        expected.insert(secondOccurence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
