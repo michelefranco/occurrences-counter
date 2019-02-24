@@ -2,7 +2,9 @@ import Foundation
 
 struct Prepreprocessor {
     static func words(from text: String) -> [String] {
-        let preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        
+       preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "[,]", with: " ", options: .regularExpression, range: nil)
         
         return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
     }
