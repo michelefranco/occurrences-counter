@@ -4,7 +4,7 @@ enum Order {
     case crescent, decrescent
 }
 
-struct OccurencesManager {
+struct WordOccurenceManager {
     func occurences(from text: String, with order: Order) -> [WordOccurence] {
         let occurences = self.occurences(from: text)
         

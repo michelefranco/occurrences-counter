@@ -8,17 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		B427F3C42222F976009A320B /* Textbook.xib in Resources */ = {isa = PBXBuildFile; fileRef = B427F3C32222F976009A320B /* Textbook.xib */; };
+		B427F3C6222304E0009A320B /* WorldOccurrenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B427F3C5222304E0009A320B /* WorldOccurrenceTableViewController.swift */; };
 		B447C179222184E200B69970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447C178222184E200B69970 /* AppDelegate.swift */; };
 		B447C17B222184E200B69970 /* TextbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447C17A222184E200B69970 /* TextbookViewController.swift */; };
 		B447C180222184E400B69970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B447C17F222184E400B69970 /* Assets.xcassets */; };
 		B447C183222184E400B69970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B447C181222184E400B69970 /* LaunchScreen.storyboard */; };
 		B44E71AA2221BCA500E4B06C /* OccurencesCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71A92221BCA500E4B06C /* OccurencesCounterTests.swift */; };
 		B44E71B22221BFA700E4B06C /* book.txt in Resources */ = {isa = PBXBuildFile; fileRef = B44E71B12221BFA700E4B06C /* book.txt */; };
-		B44E71B42221E18A00E4B06C /* OccurencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B32221E18A00E4B06C /* OccurencesManager.swift */; };
-		B44E71B62221E21F00E4B06C /* Occurence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B52221E21F00E4B06C /* Occurence.swift */; };
+		B44E71B42221E18A00E4B06C /* WordOccurenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B32221E18A00E4B06C /* WordOccurenceManager.swift */; };
+		B44E71B62221E21F00E4B06C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B52221E21F00E4B06C /* Model.swift */; };
 		B44E71B822222F0C00E4B06C /* Preprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B722222F0C00E4B06C /* Preprocessor.swift */; };
 		B44E71C22222391700E4B06C /* PrimeNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71C12222391700E4B06C /* PrimeNumberTests.swift */; };
-		B44E71C42222395C00E4B06C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71C32222395C00E4B06C /* Extension.swift */; };
+		B44E71C42222395C00E4B06C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71C32222395C00E4B06C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		B427F3C32222F976009A320B /* Textbook.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Textbook.xib; sourceTree = "<group>"; };
+		B427F3C5222304E0009A320B /* WorldOccurrenceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOccurrenceTableViewController.swift; sourceTree = "<group>"; };
 		B447C175222184E200B69970 /* OccurencesCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OccurencesCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B447C178222184E200B69970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B447C17A222184E200B69970 /* TextbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextbookViewController.swift; sourceTree = "<group>"; };
@@ -43,11 +45,11 @@
 		B44E71A92221BCA500E4B06C /* OccurencesCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurencesCounterTests.swift; sourceTree = "<group>"; };
 		B44E71AB2221BCA500E4B06C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44E71B12221BFA700E4B06C /* book.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = book.txt; sourceTree = "<group>"; };
-		B44E71B32221E18A00E4B06C /* OccurencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurencesManager.swift; sourceTree = "<group>"; };
-		B44E71B52221E21F00E4B06C /* Occurence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occurence.swift; sourceTree = "<group>"; };
+		B44E71B32221E18A00E4B06C /* WordOccurenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurenceManager.swift; sourceTree = "<group>"; };
+		B44E71B52221E21F00E4B06C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B44E71B722222F0C00E4B06C /* Preprocessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preprocessor.swift; sourceTree = "<group>"; };
 		B44E71C12222391700E4B06C /* PrimeNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeNumberTests.swift; sourceTree = "<group>"; };
-		B44E71C32222395C00E4B06C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B44E71C32222395C00E4B06C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B427F3CB222306FA009A320B /* Word Occurences Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B427F3C5222304E0009A320B /* WorldOccurrenceTableViewController.swift */,
+			);
+			path = "Word Occurences Logic";
+			sourceTree = "<group>";
+		};
+		B427F3CC22230726009A320B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B44E71B722222F0C00E4B06C /* Preprocessor.swift */,
+				B44E71C32222395C00E4B06C /* Extensions.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B427F3CD2223074A009A320B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B447C17F222184E400B69970 /* Assets.xcassets */,
+				B447C181222184E400B69970 /* LaunchScreen.storyboard */,
+				B44E71B12221BFA700E4B06C /* book.txt */,
+				B447C184222184E400B69970 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B427F3CE2223077F009A320B /* Occurences Management */ = {
+			isa = PBXGroup;
+			children = (
+				B44E71B52221E21F00E4B06C /* Model.swift */,
+				B44E71B32221E18A00E4B06C /* WordOccurenceManager.swift */,
+			);
+			path = "Occurences Management";
+			sourceTree = "<group>";
+		};
+		B427F3CF222307A1009A320B /* Textbook */ = {
+			isa = PBXGroup;
+			children = (
+				B447C17A222184E200B69970 /* TextbookViewController.swift */,
+				B427F3C32222F976009A320B /* Textbook.xib */,
+			);
+			path = Textbook;
+			sourceTree = "<group>";
+		};
 		B447C16C222184E200B69970 = {
 			isa = PBXGroup;
 			children = (
@@ -89,17 +137,12 @@
 		B447C177222184E200B69970 /* OccurencesCounter */ = {
 			isa = PBXGroup;
 			children = (
-				B447C184222184E400B69970 /* Info.plist */,
 				B447C178222184E200B69970 /* AppDelegate.swift */,
-				B447C17A222184E200B69970 /* TextbookViewController.swift */,
-				B427F3C32222F976009A320B /* Textbook.xib */,
-				B44E71B52221E21F00E4B06C /* Occurence.swift */,
-				B44E71B32221E18A00E4B06C /* OccurencesManager.swift */,
-				B44E71B722222F0C00E4B06C /* Preprocessor.swift */,
-				B44E71B12221BFA700E4B06C /* book.txt */,
-				B447C17F222184E400B69970 /* Assets.xcassets */,
-				B447C181222184E400B69970 /* LaunchScreen.storyboard */,
-				B44E71C32222395C00E4B06C /* Extension.swift */,
+				B427F3CE2223077F009A320B /* Occurences Management */,
+				B427F3CD2223074A009A320B /* Resources */,
+				B427F3CC22230726009A320B /* Supporting Files */,
+				B427F3CF222307A1009A320B /* Textbook */,
+				B427F3CB222306FA009A320B /* Word Occurences Logic */,
 			);
 			path = OccurencesCounter;
 			sourceTree = "<group>";
@@ -217,11 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B447C17B222184E200B69970 /* TextbookViewController.swift in Sources */,
+				B427F3C6222304E0009A320B /* WorldOccurrenceTableViewController.swift in Sources */,
 				B447C179222184E200B69970 /* AppDelegate.swift in Sources */,
 				B44E71B822222F0C00E4B06C /* Preprocessor.swift in Sources */,
-				B44E71C42222395C00E4B06C /* Extension.swift in Sources */,
-				B44E71B42221E18A00E4B06C /* OccurencesManager.swift in Sources */,
-				B44E71B62221E21F00E4B06C /* Occurence.swift in Sources */,
+				B44E71C42222395C00E4B06C /* Extensions.swift in Sources */,
+				B44E71B42221E18A00E4B06C /* WordOccurenceManager.swift in Sources */,
+				B44E71B62221E21F00E4B06C /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = OccurencesCounter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OccurencesCounter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,7 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = OccurencesCounter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OccurencesCounter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

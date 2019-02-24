@@ -2,7 +2,7 @@ import XCTest
 @testable import OccurencesCounter
 
 class OccurencesCounterTests: XCTestCase {
-    let manager = OccurencesManager()
+    let manager = WordOccurenceManager()
     
     func testEmptyString() {
         let input = ""

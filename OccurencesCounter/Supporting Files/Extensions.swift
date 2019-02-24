@@ -1,7 +1,6 @@
-import Foundation
+import UIKit
 
 extension Int {
-    
     // complexity: O(n)
     var isPrime: Bool {
         guard self > 1 else { return false }
@@ -16,5 +15,16 @@ extension Int {
         }
         
         return result
+    }
+}
+
+extension UIColor {
+    convenience init(hex: Int, alpha: CGFloat = 1) {
+        self.init(
+            red: CGFloat(UInt8(hex >> 16 & 0xFF)) / 255,
+            green: CGFloat(UInt8(hex >> 8 & 0xFF)) / 255,
+            blue: CGFloat(UInt8(hex & 0xFF)) / 255,
+            alpha: alpha
+        )
     }
 }

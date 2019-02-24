@@ -15,8 +15,8 @@ final class TextbookViewController: UIViewController {
     //MARK: UIViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.navigationBar.topItem?.title = "Text Book"
+        
+        self.title = "Text Book"
         
         if let bookURL = Bundle.main.url(forResource: "book", withExtension: "txt") {
             let text: String
@@ -43,12 +43,14 @@ final class TextbookViewController: UIViewController {
         super.viewDidAppear(animated)
         
         self.bookTextView.flashScrollIndicators()
-        
-        
-//        self.bookTextView.setContentOffset(.zero, animated: false)
     }
     
     @IBAction func convertPressed(_ sender: UIButton) {
+        let manager = WordOccurenceManager()
+        if let text = self.bookTextView.text {
+            let model = manager.occurences(from: text, with: .decrescent)
+            let occurencesViewController = WorldOccurrenceTableViewController(with: model)
+            self.show(occurencesViewController, sender: nil)
+        }
     }
 }
-
