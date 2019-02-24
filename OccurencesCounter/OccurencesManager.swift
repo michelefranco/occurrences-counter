@@ -4,7 +4,8 @@ struct Prepreprocessor {
     static func words(from text: String) -> [String] {
         var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         
-        preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "[,;?!.:]", with: " ", options: .regularExpression, range: nil)
+        let symbols = "_,;?!.:()\\[\\]{}*<>/\""
+        preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "[\(symbols)]", with: " ", options: .regularExpression, range: nil)
         
         return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
     }

@@ -47,6 +47,7 @@ class OccurencesCounterTests: XCTestCase {
     func testOneWordTwoOccurences() {
         let input = "One one"
         let result = manager.occurences(from: input)
+        
         var expected = Set<WordOccurence>()
         let occurence = WordOccurence(word: "one", occurence: 2)
         expected.insert(occurence)
@@ -57,6 +58,7 @@ class OccurencesCounterTests: XCTestCase {
     func testOneWordTwoOccurencesMultipleSpaces() {
         let input = "  One      one"
         let result = manager.occurences(from: input)
+       
         var expected = Set<WordOccurence>()
         let occurence = WordOccurence(word: "one", occurence: 2)
         expected.insert(occurence)
@@ -67,6 +69,7 @@ class OccurencesCounterTests: XCTestCase {
     func testTwoOccurencesNewLineMultipleSpaces() {
         let input = "  One    \n  two"
         let result = manager.occurences(from: input)
+        
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 1)
         let secondOccurence = WordOccurence(word: "two", occurence: 1)
@@ -79,6 +82,7 @@ class OccurencesCounterTests: XCTestCase {
     func testTwoOccurencesWithComma() {
         let input = "One,two"
         let result = manager.occurences(from: input)
+        
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 1)
         let secondOccurence = WordOccurence(word: "two", occurence: 1)
@@ -91,6 +95,7 @@ class OccurencesCounterTests: XCTestCase {
     func testTwoOccurencesWithPunctuation() {
         let input = "One,two;ONE:twO.one?two!"
         let result = manager.occurences(from: input)
+        
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 3)
         let secondOccurence = WordOccurence(word: "two", occurence: 3)
@@ -103,7 +108,12 @@ class OccurencesCounterTests: XCTestCase {
     func testTwoOccurencesWithRemainingSymbols() {
         let input = "(One two) [ONE:twO] {.one?two} \"one\" *_ <>/"
         let result = manager.occurences(from: input)
+       
         var expected = Set<WordOccurence>()
+        let firstOccurence = WordOccurence(word: "one", occurence: 4)
+        let secondOccurence = WordOccurence(word: "two", occurence: 3)
+        expected.insert(firstOccurence)
+        expected.insert(secondOccurence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
