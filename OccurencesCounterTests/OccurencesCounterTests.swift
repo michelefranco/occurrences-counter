@@ -99,4 +99,12 @@ class OccurencesCounterTests: XCTestCase {
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
+    
+    func testTwoOccurencesWithRemainingSymbols() {
+        let input = "(One two) [ONE:twO] {.one?two} \"one\" *_ <>/"
+        let result = manager.occurences(from: input)
+        var expected = Set<WordOccurence>()
+        
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }
 }
