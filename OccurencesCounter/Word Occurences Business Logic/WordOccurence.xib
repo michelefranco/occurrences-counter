@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordOccurenceViewController" customModule="OccurencesCounter" customModuleProvider="target">
+            <connections>
+                <outlet property="containerTableView" destination="tc6-K1-TbK" id="q2z-Eq-T1r"/>
+                <outlet property="segmentedControl" destination="zsU-Mn-lKx" id="we2-5p-rF4"/>
+                <outlet property="view" destination="iN0-l3-epB" id="PAy-ZJ-CCV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zsU-Mn-lKx">
+                    <rect key="frame" x="56.5" y="28" width="262.5" height="29"/>
+                    <segments>
+                        <segment title="First"/>
+                        <segment title="Second"/>
+                    </segments>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-K1-TbK" userLabel="Container Table View">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tc6-K1-TbK" secondAttribute="bottom" id="A1d-JZ-nty"/>
+                <constraint firstItem="zsU-Mn-lKx" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="RWE-bV-wfn"/>
+                <constraint firstItem="zsU-Mn-lKx" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="SPw-5r-6jY"/>
+                <constraint firstItem="tc6-K1-TbK" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="fL0-dz-2Gq"/>
+                <constraint firstItem="zsU-Mn-lKx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="lAf-7p-cGI"/>
+                <constraint firstItem="tc6-K1-TbK" firstAttribute="top" secondItem="zsU-Mn-lKx" secondAttribute="bottom" constant="8" symbolic="YES" id="nlc-gS-BJv"/>
+                <constraint firstItem="tc6-K1-TbK" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="tIK-eE-JaX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

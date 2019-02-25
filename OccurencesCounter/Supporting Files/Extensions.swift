@@ -28,3 +28,32 @@ extension UIColor {
         )
     }
 }
+
+extension UIViewController {
+    func addChild(_ controller: UIViewController, in containerView: UIView) {
+        self.addChild(controller)
+        containerView.addSubview(controller.view)
+        controller.view.fillConstraintsToSuperview()
+        controller.didMove(toParent: self)
+    }
+    
+    func removeFromParentController() {
+        self.willMove(toParent: nil)
+        self.view.removeFromSuperview()
+        self.removeFromParent()
+    }
+}
+
+extension UIView {
+    func fillConstraintsToSuperview(_ multiplier: CGFloat = 1) {
+        guard let superview = self.superview else { return }
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            self.centerYAnchor.constraint(equalTo: superview.centerYAnchor),
+            self.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: multiplier),
+            self.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: multiplier),
+            ])
+    }
+}

@@ -1,12 +1,13 @@
 import XCTest
 @testable import OccurencesCounter
 
-class OccurencesCounterTests: XCTestCase {
-    let manager = WordOccurenceManager()
+class WordOccurenceReducerTests: XCTestCase {
+    var manager: WordOccurenceManager!
     
     func testEmptyString() {
         let input = ""
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         let expected = Set<WordOccurence>()
         XCTAssertEqual(result, expected, "The result is not empty")
@@ -15,7 +16,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testOneOccurence() {
         let input = "One"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         let occurence = WordOccurence(word: "one", occurence: 1)
         var expected = Set<WordOccurence>()
@@ -26,7 +28,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurences() {
         let input = "One two"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 1)
@@ -39,7 +42,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testOneWordTwoOccurences() {
         let input = "One one"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         var expected = Set<WordOccurence>()
         let occurence = WordOccurence(word: "one", occurence: 2)
@@ -50,7 +54,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testOneWordTwoOccurencesMultipleSpaces() {
         let input = "  One      one"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
        
         var expected = Set<WordOccurence>()
         let occurence = WordOccurence(word: "one", occurence: 2)
@@ -61,7 +66,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesNewLineMultipleSpaces() {
         let input = "  One    \n  two"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 1)
@@ -74,7 +80,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesWithComma() {
         let input = "One,two"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 1)
@@ -87,7 +94,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesWithPunctuation() {
         let input = "One,two;ONE:twO.one?two!"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 3)
@@ -100,7 +108,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesWithRemainingSymbols() {
         let input = "(One two) [ONE:twO] {.one?two} \"one\" *_ <>/"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
        
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "one", occurence: 4)
@@ -113,7 +122,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesWithEnglishPossessive() {
         let input = "Simpson's home"
-        let result = manager.occurences(from: input)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences()
         
         var expected = Set<WordOccurence>()
         let firstOccurence = WordOccurence(word: "simpson", occurence: 1)
@@ -126,7 +136,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesDecrescentOrder() {
         let input = "one One Two"
-        let result = manager.occurences(from: input, with: .decrescent)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences(with: .decrescent)
         
         let firstOccurence = WordOccurence(word: "one", occurence: 2)
         let secondOccurence = WordOccurence(word: "two", occurence: 1)
@@ -137,7 +148,8 @@ class OccurencesCounterTests: XCTestCase {
     
     func testTwoOccurencesCrescentOrder() {
         let input = "one One Two"
-        let result = manager.occurences(from: input, with: .crescent)
+        self.manager = WordOccurenceReducer(text: input)
+        let result = manager.occurences(with: .crescent)
         
         let firstOccurence = WordOccurence(word: "two", occurence: 2)
         let secondOccurence = WordOccurence(word: "one", occurence: 1)

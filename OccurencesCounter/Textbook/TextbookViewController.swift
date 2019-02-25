@@ -4,6 +4,8 @@ final class TextbookViewController: UIViewController {
     @IBOutlet var bookTextView: UITextView!
     private var layoutIsSet = false
     
+    //MARK: UIViewController's life cycle
+
     init() {
         super.init(nibName: "Textbook", bundle: nil)
     }
@@ -12,7 +14,6 @@ final class TextbookViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: UIViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +36,6 @@ final class TextbookViewController: UIViewController {
         guard !self.layoutIsSet else { return }
         
         self.layoutIsSet = true
-        
         self.bookTextView.setContentOffset(.zero, animated: false)
     }
     
@@ -46,10 +46,9 @@ final class TextbookViewController: UIViewController {
     }
     
     @IBAction func convertPressed(_ sender: UIButton) {
-        let manager = WordOccurenceManager()
         if let text = self.bookTextView.text {
-            let model = manager.occurences(from: text, with: .decrescent)
-            let occurencesViewController = WorldOccurrenceTableViewController(with: model)
+            let manager = WordOccurenceReducer(text: text)
+            let occurencesViewController = WordOccurenceViewController(with: manager)
             self.show(occurencesViewController, sender: nil)
         }
     }

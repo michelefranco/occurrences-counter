@@ -1,8 +1,16 @@
 import UIKit
 
-class WorldOccurrenceTableViewController: UITableViewController {
-    private let model: [WordOccurence]
+final class WordOccurrenceTableViewController: UITableViewController {
+    private var model = [WordOccurence]()
     private let reuseIdentifier = "OccurencesTableViewCellIdentifier"
+    
+    
+    //MARK: UIViewController's life cycle
+    
+    convenience init() {
+        self.init(with: [WordOccurence]())
+    }
+    
     init(with model: [WordOccurence]) {
         self.model = model
         super.init(style: .plain)
@@ -15,17 +23,26 @@ class WorldOccurrenceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Occurences"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.reuseIdentifier)
-        
         self.tableView.allowsSelection = false
     }
-    // MARK: - Table view data source
+    
+    //MARK: Methods
+    
+    func reload(with model: [WordOccurence]) {
+        self.model = model
+        
+        self.tableView.reloadSections([0], with: .automatic)
+        self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+    }
+    
+    // MARK: UITableView's Datasource
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.model.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.reuseIdentifier)
         
