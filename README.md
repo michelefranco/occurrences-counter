@@ -16,15 +16,15 @@ Specifically, the most famous architectural patterns are:
 
 A deep analysis of each one is beyond the scope of this review, but how should developers choose the right archictecture for a specific problem?
 
-##### Distribution of correct responsibilities among components. 
+#### Distribution of correct responsibilities among components. 
 
-Every software engineer knows what SOLID principles are. The first letter stands for `Single responsibility principle` and it cannot just be a case if the detection of the correct responsibilities is at the top for the designing of an application.
+Every software engineer knows what SOLID principles are. The first letter stands for `Single responsibility principle` and it cannot just be a case if the detection of the correct responsibilities is at the top of the designing of an application.
 It is a "weapon" to defeat and manage complexity of a product. 
 
-##### Testability
+#####Testability
 Separation of concerns has the benefit of making implementations testable. The more data are isolated from the business logic and user interface the more unit tests are straightforward to write.
 
-##### Ease of use
+#### Ease of use
 Architectures could be very complex in terms of effort and maintainance. Sometimes, making a product more robust than necessary for its intended use is the key for potential issues.
 
 
