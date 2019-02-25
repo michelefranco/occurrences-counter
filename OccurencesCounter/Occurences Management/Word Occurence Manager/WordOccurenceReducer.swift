@@ -39,7 +39,7 @@ final class WordOccurenceReducer: WordOccurenceManager {
     // MARK: Private functions
     
     private func calculateOccurences(from text: String) -> Set<WordOccurence> {
-        let words = Prepreprocessor.words(from: text)
+        let words = Prepreprocessor().words(from: text)
         let dictionary = self.map(from: words)
         var set = Set<WordOccurence>()
         
