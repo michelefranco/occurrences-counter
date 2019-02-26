@@ -73,37 +73,37 @@ Specifically, it goes through the text for three times:
 one for replacing symbol and then for the separation of words by whitespaces and new Lines.
 
 There is no way to complete this task in a more efficient way, just because solutions need to scan the entire file.
-Therefore, the complexity in time of the function `words`  is $\Omicron(n)$.
+Therefore, the complexity in time of the function `words`  is  $\Omicron(n)$.
 
 
 #### Model
 Below there are models utilised into the application.
 ```swift
 enum Order {
-case crescent, decrescent
+    case crescent, decrescent
 
-var description: String {
-switch self {
-case .decrescent:
-return "Decrescent"
-case .crescent:
-return "Crescent"
-}
-}
+    var description: String {
+        switch self {
+        case .decrescent:
+            return "Decrescent"
+        case .crescent:
+            return "Crescent"
+        }
+    }
 }
 ```
 
 ```swift
 struct WordOccurrence: Hashable {
-let word: String
-let occurrence: Int
-var hashValue: Int {
-return word.hashValue
-}
+    let word: String
+    let occurrence: Int
+    var hashValue: Int {
+        return word.hashValue
+        }
 
-static func ==(lhs: WordOccurrence, rhs: WordOccurrence) -> Bool {
-return lhs.word == rhs.word
-}
+    static func ==(lhs: WordOccurrence, rhs: WordOccurrence) -> Bool {
+        return lhs.word == rhs.word
+    }
 }
 ```
 As you can see, WordOccurrence implements the `Hashable` protocol in order to be supported from data structures which have Hashable elements (e.g. dictionaries and sets).
@@ -113,9 +113,9 @@ As you can see, WordOccurrence implements the `Hashable` protocol in order to be
 Once preprocessing has been done, `WordOccurrenceManager` comes into play. Concretely, it is a protocol that exposes functions.
 ```swift
 protocol WordOccurrenceManager {
-init(text: String)
-func occurrences() -> Set<WordOccurrence>
-func occurrences(with order: Order) -> [WordOccurrence]
+    init(text: String)
+    func occurrences() -> Set<WordOccurrence>
+    func occurrences(with order: Order) -> [WordOccurrence]
 }
 ```
 Solutions have one-to-one relationship with each concrete implementation of the interface above, hence let's go deeper by analysing them individually.
@@ -127,60 +127,61 @@ The reason why Preprocessor has been introduced before any other entities is sim
 The following code is the implementation of our manager:
 ```swift
 final class WordOccurrenceReducer: WordOccurrenceManager {
-private  let text: String
-private lazy var occurrencesSet: Set<WordOccurrence> = {
-self.calculateOccurrences(from: self.text)
-}()
+    private let text: String
+    
+    private lazy var occurrencesSet: Set<WordOccurrence> = {
+    self.calculateOccurrences(from: self.text)
+    }()
 
-private lazy var occurrencesCrescent: [WordOccurrence] = {
-return  self.occurrencesSet.sorted { $0.occurrence < $1.occurrence }
-}()
+    private lazy var occurrencesCrescent: [WordOccurrence] = {
+        return self.occurrencesSet.sorted { $0.occurrence < $1.occurrence }
+    }()
 
-private lazy var occurrencesDecrescent: [WordOccurrence] = {
-return  self.occurrencesSet.sorted { $0.occurrence > $1.occurrence }
-}()
+    private lazy var occurrencesDecrescent: [WordOccurrence] = {
+        return self.occurrencesSet.sorted { $0.occurrence > $1.occurrence }
+    }()
 
-init(text: String) {
-self.text = text
-}
+    init(text: String) {
+        self.text = text
+    }
 
-// MARK: Public functions
-func occurrences() -> Set<WordOccurrence> {
-return  self.occurrencesSet
-}
+    // MARK: Public functions
+    func occurrences() -> Set<WordOccurrence> {
+        return self.occurrencesSet
+    }
 
-func occurrences(with order: Order) -> [WordOccurrence] {
-let orderedOccurrences: [WordOccurrence]
-switch order {    
-case .crescent:
-orderedOccurrences = self.occurencesCrescent
-case .decrescent:
-orderedOccurrences = self.occurencesDecrescent
-}
+    func occurrences(with order: Order) -> [WordOccurrence] {
+        let orderedOccurrences: [WordOccurrence]
+        switch order {    
+        case .crescent:
+            orderedOccurrences = self.occurencesCrescent
+        case .decrescent:
+            orderedOccurrences = self.occurencesDecrescent
+        }
 
-return orderedOccurrences
-}
+    return orderedOccurrences
+    }
 
-// MARK: Private functions
-private func calculateOccurrences(from text: String) -> Set<WordOccurrence> {
-let words = Prepreprocessor().words(from: text)
-let dictionary = self.map(from: words)
-var result = Set<WordOccurrence>()
-dictionary.forEach { word, occurrence in
-let wordOccurrences = WordOccurrence(word: word, occurrence: occurrence)
-result.insert(wordOccurrences)
-}
+    // MARK: Private functions
+    private func calculateOccurrences(from text: String) -> Set<WordOccurrence> {
+        let words = Prepreprocessor().words(from: text)
+        let dictionary = self.map(from: words)
+        var result = Set<WordOccurrence>()
+        dictionary.forEach { word, occurrence in
+            let wordOccurrences = WordOccurrence(word: word, occurrence: occurrence)
+            result.insert(wordOccurrences)
+        }
 
-return result
-}
+        return result
+    }
 
-private func map(from words: [String]) -> [String: Int] {
-return words.reduce(into: [:]) { counts, word in
-if !word.isEmpty {
-counts[word, default: 0] += 1
-}
-}
-}
+    private func map(from words: [String]) -> [String: Int] {
+        return words.reduce(into: [:]) { counts, word in
+            if !word.isEmpty {
+                counts[word, default: 0] += 1
+            }
+        }
+    }
 }
 ``` 
 Essentially, the are two public functions:
@@ -198,25 +199,26 @@ final class WordOccurrenceReducer: WordOccurrenceManager {
 ...
 // code above
 
-// MARK: Private functions
-private func calculateOccurrences(from text:  String) -> Set<WordOccurrence>  { 
-let words = Prepreprocessor().words(from: text)  
-let dictionary = self.map(from: words)              
-var result = Set<WordOccurrence>()
-dictionary.forEach { word, occurrence in  
-let wordOccurrences = WordOccurrence(word: word, occurrence: occurrence)          
-result.insert(wordOccurrences)  
-}
+    // MARK: Private functions
+    private func calculateOccurrences(from text: String) -> Set<WordOccurrence>  { 
+        let words = Prepreprocessor().words(from: text)  
+        let dictionary = self.map(from: words)              
+        var result = Set<WordOccurrence>()
+        dictionary.forEach { word, occurrence in  
+            let wordOccurrences = WordOccurrence(word: word, occurrence: occurrence)          
+            result.insert(wordOccurrences)  
+            }
 
-return result 
-}
+        return result 
+    }
 
-private func map(from words: [String]) -> [String:  Int] { 
-return words.reduce(into:  [:])  { counts, word in  
-if  !word.isEmpty  { counts[word,  default:  0]  +=  1  
-}      
-}  
-}
+    private func map(from words: [String]) -> [String:  Int] { 
+        return words.reduce(into:  [:])  { counts, word in  
+            if  !word.isEmpty  { 
+                counts[word,  default:  0]  +=  1  
+            }      
+        }  
+    }
 ```
 
 It can be decomposed in:
@@ -237,41 +239,42 @@ The application could request to have an ordered sequence instead of a set. This
 
 ```swift
 final class WordOccurrenceReducer: WordOccurrenceManager {
-private  let text: String
-private lazy var occurrencesSet: Set<WordOccurrence> = {
-self.calculateOccurrences(from: self.text)
-}()
+    private let text: String
+    
+    private lazy var occurrencesSet: Set<WordOccurrence> = {
+        self.calculateOccurrences(from: self.text)
+    }()
 
-private lazy var occurrencesCrescent: [WordOccurrence] = {
-return  self.occurrencesSet.sorted { $0.occurrence < $1.occurrence }
-}()
+    private lazy var occurrencesCrescent: [WordOccurrence] = {
+        return self.occurrencesSet.sorted { $0.occurrence < $1.occurrence }
+    }()
 
-private lazy var occurrencesDecrescent: [WordOccurrence] = {
-return  self.occurrencesSet.sorted { $0.occurrence > $1.occurrence }
-}()
+    private lazy var occurrencesDecrescent: [WordOccurrence] = {
+        return self.occurrencesSet.sorted { $0.occurrence > $1.occurrence }
+    }()
 
-init(text: String) {
-self.text = text
-}
+    init(text: String) {
+        self.text = text
+    }
 
-// MARK: Public functions
-....
-// other code
+    // MARK: Public functions
+    ....
+    // other code
 
-func occurrences(with order: Order) -> [WordOccurrence] {
-let orderedOccurrences: [WordOccurrence]
-switch order {    
-case .crescent:
-orderedOccurrences = self.occurrencesCrescent
-case .decrescent:
-orderedOccurrences = self.occurrencesDecrescent
-}
+    func occurrences(with order: Order) -> [WordOccurrence] {
+        let orderedOccurrences: [WordOccurrence]
+        switch order {    
+        case .crescent:
+            orderedOccurrences = self.occurrencesCrescent
+        case .decrescent:
+            orderedOccurrences = self.occurrencesDecrescent
+        }
 
-return orderedOccurrences
-}
+        return orderedOccurrences
+    }
 
-...
-// other code
+    ...
+    // other code
 }
 ```
 In few words, it starts by invoking `occurrences(with order: Order)` .
