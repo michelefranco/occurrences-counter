@@ -57,14 +57,18 @@ There are a couple of approach for finding and counting them. They expect a prep
 This is the task of `Preprocessor` struct.
 ```swift
 struct Prepreprocessor {
-let symbolSkipped = "_,';?!.:()\\[\\]{}*<>/\""
+    let symbolSkipped = "_,';?!.:()\\[\\]{}*<>/\""
 
-func words(from text: String) -> [String] {
-var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "['s|\    (self.symbolSkipped)]", with: " ", options: .regularExpression, range: nil)
-return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
-}
-}
+    func words(from text: String) -> [String] {
+        var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        
+        preprocessingOutcome = preprocessingOutcome.replacingOccurrences(of: "(//'s)|[\(self.symbolSkipped)]", 
+                                                                            with: " ", 
+                                                                            options: .regularExpression, range: nil)
+        
+        return preprocessingOutcome.components(separatedBy: .whitespacesAndNewlines)
+        }
+    }
 ```
 Specifically, it goes through the text for three times:
 1. Complete lowercased version of the text
