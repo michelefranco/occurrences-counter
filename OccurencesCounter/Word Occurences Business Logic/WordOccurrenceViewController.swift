@@ -1,16 +1,16 @@
 import UIKit
 
-final class WordOccurenceViewController: UIViewController {
-    private let wordOccurenceTableViewController = WordOccurrenceTableViewController()
+final class WordOccurrenceViewController: UIViewController {
+    private let wordOccurrenceTableViewController = WordOccurrenceTableViewController()
     private let orders: [Order] = [.decrescent, .crescent]
-    private let occurencesManager: WordOccurenceManager
+    private let occurrencesManager: WordOccurrenceManager
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var containerTableView: UIView!
 
-    init(with manager: WordOccurenceManager) {
-        self.occurencesManager = manager
-        super.init(nibName: "WordOccurence", bundle: nil)
+    init(with manager: WordOccurrenceManager) {
+        self.occurrencesManager = manager
+        super.init(nibName: "WordOccurrence", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,7 +21,7 @@ final class WordOccurenceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Occurences"
+        self.title = "Occurrences"
         
         self.orders.enumerated().forEach { index, order in
             self.segmentedControl.setTitle(order.description, forSegmentAt: index)
@@ -29,7 +29,7 @@ final class WordOccurenceViewController: UIViewController {
         
         self.load(with: orders[0])
         
-        self.addChild(wordOccurenceTableViewController, in: self.containerTableView)
+        self.addChild(wordOccurrenceTableViewController, in: self.containerTableView)
         self.segmentedControl.addTarget(self, action: #selector(valueChanged(_:)), for: .valueChanged)
     }
     
@@ -41,7 +41,7 @@ final class WordOccurenceViewController: UIViewController {
     }
     
     private func load(with order: Order) {
-        let occurences = self.occurencesManager.occurences(with: order)
-        self.wordOccurenceTableViewController.reload(with: occurences)
+        let occurrences = self.occurrencesManager.occurrences(with: order)
+        self.wordOccurrenceTableViewController.reload(with: occurrences)
     }
 }

@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>OccurencesCounter.xcscheme_^#shared#^_</key>
+		<key>OccurrencesCounter.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B447C174222184E200B69970</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B44E71A62221BCA500E4B06C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

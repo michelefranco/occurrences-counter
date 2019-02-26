@@ -15,15 +15,15 @@
 		B447C183222184E400B69970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B447C181222184E400B69970 /* LaunchScreen.storyboard */; };
 		B44E71AA2221BCA500E4B06C /* WordOccurenceReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71A92221BCA500E4B06C /* WordOccurenceReducerTests.swift */; };
 		B44E71B22221BFA700E4B06C /* book.txt in Resources */ = {isa = PBXBuildFile; fileRef = B44E71B12221BFA700E4B06C /* book.txt */; };
-		B44E71B42221E18A00E4B06C /* WordOccurenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B32221E18A00E4B06C /* WordOccurenceManager.swift */; };
-		B44E71B62221E21F00E4B06C /* WordOccurence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B52221E21F00E4B06C /* WordOccurence.swift */; };
+		B44E71B42221E18A00E4B06C /* WordOccurrenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B32221E18A00E4B06C /* WordOccurrenceManager.swift */; };
+		B44E71B62221E21F00E4B06C /* WordOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B52221E21F00E4B06C /* WordOccurrence.swift */; };
 		B44E71B822222F0C00E4B06C /* Preprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71B722222F0C00E4B06C /* Preprocessor.swift */; };
 		B44E71C22222391700E4B06C /* PrimeNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71C12222391700E4B06C /* PrimeNumberTests.swift */; };
 		B44E71C42222395C00E4B06C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E71C32222395C00E4B06C /* Extensions.swift */; };
 		B4A4313122245667003F69F5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4313022245667003F69F5 /* Order.swift */; };
-		B4A4313422245B74003F69F5 /* WordOccurenceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4313322245B74003F69F5 /* WordOccurenceReducer.swift */; };
-		B4AAB9802223E90300DB3645 /* WordOccurenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AAB97F2223E90300DB3645 /* WordOccurenceViewController.swift */; };
-		B4AAB9822223E97300DB3645 /* WordOccurence.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AAB9812223E97300DB3645 /* WordOccurence.xib */; };
+		B4A4313422245B74003F69F5 /* WordOccurrenceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4313322245B74003F69F5 /* WordOccurrenceReducer.swift */; };
+		B4AAB9802223E90300DB3645 /* WordOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AAB97F2223E90300DB3645 /* WordOccurrenceViewController.swift */; };
+		B4AAB9822223E97300DB3645 /* WordOccurrence.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AAB9812223E97300DB3645 /* WordOccurrence.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,15 +49,15 @@
 		B44E71A92221BCA500E4B06C /* WordOccurenceReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurenceReducerTests.swift; sourceTree = "<group>"; };
 		B44E71AB2221BCA500E4B06C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44E71B12221BFA700E4B06C /* book.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = book.txt; sourceTree = "<group>"; };
-		B44E71B32221E18A00E4B06C /* WordOccurenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurenceManager.swift; sourceTree = "<group>"; };
-		B44E71B52221E21F00E4B06C /* WordOccurence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurence.swift; sourceTree = "<group>"; };
+		B44E71B32221E18A00E4B06C /* WordOccurrenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceManager.swift; sourceTree = "<group>"; };
+		B44E71B52221E21F00E4B06C /* WordOccurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrence.swift; sourceTree = "<group>"; };
 		B44E71B722222F0C00E4B06C /* Preprocessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preprocessor.swift; sourceTree = "<group>"; };
 		B44E71C12222391700E4B06C /* PrimeNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeNumberTests.swift; sourceTree = "<group>"; };
 		B44E71C32222395C00E4B06C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B4A4313022245667003F69F5 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		B4A4313322245B74003F69F5 /* WordOccurenceReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurenceReducer.swift; sourceTree = "<group>"; };
-		B4AAB97F2223E90300DB3645 /* WordOccurenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurenceViewController.swift; sourceTree = "<group>"; };
-		B4AAB9812223E97300DB3645 /* WordOccurence.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordOccurence.xib; sourceTree = "<group>"; };
+		B4A4313322245B74003F69F5 /* WordOccurrenceReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceReducer.swift; sourceTree = "<group>"; };
+		B4AAB97F2223E90300DB3645 /* WordOccurrenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceViewController.swift; sourceTree = "<group>"; };
+		B4AAB9812223E97300DB3645 /* WordOccurrence.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordOccurrence.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				B427F3C5222304E0009A320B /* WordOccurrenceTableViewController.swift */,
-				B4AAB97F2223E90300DB3645 /* WordOccurenceViewController.swift */,
-				B4AAB9812223E97300DB3645 /* WordOccurence.xib */,
+				B4AAB97F2223E90300DB3645 /* WordOccurrenceViewController.swift */,
+				B4AAB9812223E97300DB3645 /* WordOccurrence.xib */,
 			);
 			path = "Word Occurences Business Logic";
 			sourceTree = "<group>";
@@ -108,13 +108,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B427F3CE2223077F009A320B /* Occurences Management */ = {
+		B427F3CE2223077F009A320B /* Occurrences Management */ = {
 			isa = PBXGroup;
 			children = (
 				B4A4313622245BAF003F69F5 /* Model */,
 				B4A4313222245B62003F69F5 /* Word Occurence Manager */,
 			);
-			path = "Occurences Management";
+			path = "Occurrences Management";
 			sourceTree = "<group>";
 		};
 		B427F3CF222307A1009A320B /* Textbook */ = {
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				B447C178222184E200B69970 /* AppDelegate.swift */,
-				B427F3CE2223077F009A320B /* Occurences Management */,
+				B427F3CE2223077F009A320B /* Occurrences Management */,
 				B427F3CD2223074A009A320B /* Resources */,
 				B427F3CC22230726009A320B /* Supporting Files */,
 				B427F3CF222307A1009A320B /* Textbook */,
@@ -170,8 +170,8 @@
 		B4A4313222245B62003F69F5 /* Word Occurence Manager */ = {
 			isa = PBXGroup;
 			children = (
-				B44E71B32221E18A00E4B06C /* WordOccurenceManager.swift */,
-				B4A4313322245B74003F69F5 /* WordOccurenceReducer.swift */,
+				B44E71B32221E18A00E4B06C /* WordOccurrenceManager.swift */,
+				B4A4313322245B74003F69F5 /* WordOccurrenceReducer.swift */,
 			);
 			path = "Word Occurence Manager";
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 		B4A4313622245BAF003F69F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B44E71B52221E21F00E4B06C /* WordOccurence.swift */,
+				B44E71B52221E21F00E4B06C /* WordOccurrence.swift */,
 				B4A4313022245667003F69F5 /* Order.swift */,
 			);
 			path = Model;
@@ -268,7 +268,7 @@
 			files = (
 				B447C183222184E400B69970 /* LaunchScreen.storyboard in Resources */,
 				B427F3C42222F976009A320B /* Textbook.xib in Resources */,
-				B4AAB9822223E97300DB3645 /* WordOccurence.xib in Resources */,
+				B4AAB9822223E97300DB3645 /* WordOccurrence.xib in Resources */,
 				B44E71B22221BFA700E4B06C /* book.txt in Resources */,
 				B447C180222184E400B69970 /* Assets.xcassets in Resources */,
 			);
@@ -288,16 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4A4313422245B74003F69F5 /* WordOccurenceReducer.swift in Sources */,
+				B4A4313422245B74003F69F5 /* WordOccurrenceReducer.swift in Sources */,
 				B447C17B222184E200B69970 /* TextbookViewController.swift in Sources */,
 				B427F3C6222304E0009A320B /* WordOccurrenceTableViewController.swift in Sources */,
 				B447C179222184E200B69970 /* AppDelegate.swift in Sources */,
 				B4A4313122245667003F69F5 /* Order.swift in Sources */,
 				B44E71B822222F0C00E4B06C /* Preprocessor.swift in Sources */,
 				B44E71C42222395C00E4B06C /* Extensions.swift in Sources */,
-				B44E71B42221E18A00E4B06C /* WordOccurenceManager.swift in Sources */,
-				B44E71B62221E21F00E4B06C /* WordOccurence.swift in Sources */,
-				B4AAB9802223E90300DB3645 /* WordOccurenceViewController.swift in Sources */,
+				B44E71B42221E18A00E4B06C /* WordOccurrenceManager.swift in Sources */,
+				B44E71B62221E21F00E4B06C /* WordOccurrence.swift in Sources */,
+				B4AAB9802223E90300DB3645 /* WordOccurrenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.occurencescounter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.occurrencescounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -478,7 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.occurencescounter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.occurrencescounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

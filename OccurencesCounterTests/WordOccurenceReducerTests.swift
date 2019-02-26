@@ -1,159 +1,159 @@
 import XCTest
 @testable import OccurencesCounter
 
-class WordOccurenceReducerTests: XCTestCase {
-    var manager: WordOccurenceManager!
+class WordOccurrenceReducerTests: XCTestCase {
+    var manager: WordOccurrenceManager!
     
     func testEmptyString() {
         let input = ""
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        let expected = Set<WordOccurence>()
+        let expected = Set<WordOccurrence>()
         XCTAssertEqual(result, expected, "The result is not empty")
     }
     
     
-    func testOneOccurence() {
+    func testOneOccurrence() {
         let input = "One"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        let occurence = WordOccurence(word: "one", occurence: 1)
-        var expected = Set<WordOccurence>()
-        expected.insert(occurence)
+        let Occurrence = WordOccurrence(word: "one", occurrence: 1)
+        var expected = Set<WordOccurrence>()
+        expected.insert(Occurrence)
 
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurences() {
+    func testTwoOccurrences() {
         let input = "One two"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        var expected = Set<WordOccurence>()
-        let firstOccurence = WordOccurence(word: "one", occurence: 1)
-        let secondOccurence = WordOccurence(word: "two", occurence: 1)
-        expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "one", occurrence: 1)
+        let secondOccurrence = WordOccurrence(word: "two", occurrence: 1)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testOneWordTwoOccurences() {
+    func testOneWordTwoOccurrences() {
         let input = "One one"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        var expected = Set<WordOccurence>()
-        let occurence = WordOccurence(word: "one", occurence: 2)
-        expected.insert(occurence)
+        var expected = Set<WordOccurrence>()
+        let Occurrence = WordOccurrence(word: "one", occurrence: 2)
+        expected.insert(Occurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testOneWordTwoOccurencesMultipleSpaces() {
+    func testOneWordTwoOccurrencesMultipleSpaces() {
         let input = "  One      one"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
        
-        var expected = Set<WordOccurence>()
-        let occurence = WordOccurence(word: "one", occurence: 2)
-        expected.insert(occurence)
+        var expected = Set<WordOccurrence>()
+        let Occurrence = WordOccurrence(word: "one", occurrence: 2)
+        expected.insert(Occurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesNewLineMultipleSpaces() {
+    func testTwoOccurrencesNewLineMultipleSpaces() {
         let input = "  One    \n  two"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        var expected = Set<WordOccurence>()
-        let firstOccurence = WordOccurence(word: "one", occurence: 1)
-        let secondOccurence = WordOccurence(word: "two", occurence: 1)
-        expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "one", occurrence: 1)
+        let secondOccurrence = WordOccurrence(word: "two", occurrence: 1)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesWithComma() {
+    func testTwoOccurrencesWithComma() {
         let input = "One,two"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        var expected = Set<WordOccurence>()
-        let firstOccurence = WordOccurence(word: "one", occurence: 1)
-        let secondOccurence = WordOccurence(word: "two", occurence: 1)
-        expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "one", occurrence: 1)
+        let secondOccurrence = WordOccurrence(word: "two", occurrence: 1)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesWithPunctuation() {
+    func testTwoOccurrencesWithPunctuation() {
         let input = "One,two;ONE:twO.one?two!"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        var expected = Set<WordOccurence>()
-        let firstOccurence = WordOccurence(word: "one", occurence: 3)
-        let secondOccurence = WordOccurence(word: "two", occurence: 3)
-        expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "one", occurrence: 3)
+        let secondOccurrence = WordOccurrence(word: "two", occurrence: 3)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesWithRemainingSymbols() {
+    func testTwoOccurrencesWithRemainingSymbols() {
         let input = "(One two) [ONE:twO] {.one?two} \"one\" *_ <>/"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
        
-        var expected = Set<WordOccurence>()
-        let firstOccurence = WordOccurence(word: "one", occurence: 4)
-        let secondOccurence = WordOccurence(word: "two", occurence: 3)
-        expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "one", occurrence: 4)
+        let secondOccurrence = WordOccurrence(word: "two", occurrence: 3)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesWithEnglishPossessive() {
+    func testTwoOccurrencesWithEnglishPossessive() {
         let input = "Simpson's home"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences()
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
         
-        var expected = Set<WordOccurence>()
-        let firstOccurence = WordOccurence(word: "simpson", occurence: 1)
-        let secondOccurence = WordOccurence(word: "home", occurence: 1)
-        expected.insert(firstOccurence)
-        expected.insert(secondOccurence)
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "simpson", occurrence: 1)
+        let secondOccurrence = WordOccurrence(word: "home", occurrence: 1)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
                 
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesDecrescentOrder() {
+    func testTwoOccurrencesDecrescentOrder() {
         let input = "one One Two"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences(with: .decrescent)
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences(with: .decrescent)
         
-        let firstOccurence = WordOccurence(word: "one", occurence: 2)
-        let secondOccurence = WordOccurence(word: "two", occurence: 1)
-        let expected = [firstOccurence, secondOccurence]
+        let firstOccurrence = WordOccurrence(word: "one", occurrence: 2)
+        let secondOccurrence = WordOccurrence(word: "two", occurrence: 1)
+        let expected = [firstOccurrence, secondOccurrence]
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
-    func testTwoOccurencesCrescentOrder() {
+    func testTwoOccurrencesCrescentOrder() {
         let input = "one One Two"
-        self.manager = WordOccurenceReducer(text: input)
-        let result = manager.occurences(with: .crescent)
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences(with: .crescent)
         
-        let firstOccurence = WordOccurence(word: "two", occurence: 2)
-        let secondOccurence = WordOccurence(word: "one", occurence: 1)
-        let expected = [firstOccurence, secondOccurence]
+        let firstOccurrence = WordOccurrence(word: "two", occurrence: 2)
+        let secondOccurrence = WordOccurrence(word: "one", occurrence: 1)
+        let expected = [firstOccurrence, secondOccurrence]
         
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }

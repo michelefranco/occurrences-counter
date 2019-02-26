@@ -1,17 +1,17 @@
 import UIKit
 
 final class WordOccurrenceTableViewController: UITableViewController {
-    private var model = [WordOccurence]()
-    private let reuseIdentifier = "OccurencesTableViewCellIdentifier"
+    private var model = [WordOccurrence]()
+    private let reuseIdentifier = "OccurrencesTableViewCellIdentifier"
     
     
     //MARK: UIViewController's life cycle
     
     convenience init() {
-        self.init(with: [WordOccurence]())
+        self.init(with: [WordOccurrence]())
     }
     
-    init(with model: [WordOccurence]) {
+    init(with model: [WordOccurrence]) {
         self.model = model
         super.init(style: .plain)
     }
@@ -29,7 +29,7 @@ final class WordOccurrenceTableViewController: UITableViewController {
     
     //MARK: Methods
     
-    func reload(with model: [WordOccurence]) {
+    func reload(with model: [WordOccurrence]) {
         self.model = model
         
         self.tableView.reloadSections([0], with: .automatic)
@@ -49,7 +49,7 @@ final class WordOccurrenceTableViewController: UITableViewController {
         let item = self.model[indexPath.item]
         
         cell.textLabel?.text = item.word
-        if item.occurence.isPrime {
+        if item.occurrence.isPrime {
             cell.detailTextLabel?.text = "PRIME NUMBER"
             cell.detailTextLabel?.textColor = UIColor(hex: 0x00CC00)
         } else {
@@ -57,10 +57,10 @@ final class WordOccurrenceTableViewController: UITableViewController {
             cell.detailTextLabel?.textColor = .red
         }
         
-        let occurenceLabel = UILabel()
-        occurenceLabel.text = "\(item.occurence)"
-        occurenceLabel.sizeToFit()
-        cell.accessoryView = occurenceLabel
+        let occurrenceLabel = UILabel()
+        occurrenceLabel.text = "\(item.occurrence)"
+        occurrenceLabel.sizeToFit()
+        cell.accessoryView = occurrenceLabel
         
         return cell
     }

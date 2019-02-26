@@ -47,9 +47,9 @@ final class TextbookViewController: UIViewController {
     
     @IBAction func convertPressed(_ sender: UIButton) {
         if let text = self.bookTextView.text {
-            let manager = WordOccurenceReducer(text: text)
-            let occurencesViewController = WordOccurenceViewController(with: manager)
-            self.show(occurencesViewController, sender: nil)
+            let manager = WordOccurrenceReducer(text: text)
+            let occurrencesViewController = WordOccurrenceViewController(with: manager)
+            self.show(occurrencesViewController, sender: nil)
         }
     }
 }

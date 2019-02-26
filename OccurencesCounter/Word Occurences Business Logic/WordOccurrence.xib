@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordOccurenceViewController" customModule="OccurencesCounter" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordOccurrenceViewController" customModule="OccurencesCounter" customModuleProvider="target">
             <connections>
                 <outlet property="containerTableView" destination="tc6-K1-TbK" id="q2z-Eq-T1r"/>
                 <outlet property="segmentedControl" destination="zsU-Mn-lKx" id="we2-5p-rF4"/>

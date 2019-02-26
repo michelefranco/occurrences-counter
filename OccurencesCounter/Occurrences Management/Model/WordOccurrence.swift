@@ -1,14 +1,14 @@
 import Foundation
 
-struct WordOccurence: Hashable {
+struct WordOccurrence: Hashable {
     let word: String
-    let occurence: Int
+    let occurrence: Int
     
     var hashValue: Int {
         return word.hashValue
     }
     
-    static func ==(lhs: WordOccurence, rhs: WordOccurence) -> Bool {
+    static func ==(lhs: WordOccurrence, rhs: WordOccurrence) -> Bool {
         return lhs.word == rhs.word
     }
 }
