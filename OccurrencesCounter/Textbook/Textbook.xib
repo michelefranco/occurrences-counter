@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextbookViewController" customModule="OccurencesCounter" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextbookViewController" customModule="OccurrencesCounter" customModuleProvider="target">
             <connections>
                 <outlet property="bookTextView" destination="9ho-qB-PqW" id="MRQ-pF-O2m"/>
                 <outlet property="view" destination="iN0-l3-epB" id="X9o-op-Uti"/>
@@ -29,7 +29,10 @@
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVZ-OU-vqa" userLabel="Convert Button">
                     <rect key="frame" x="112.5" y="629" width="150" height="30"/>
-                    <state key="normal" title="Convert"/>
+                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Convert">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="convertPressed:" destination="-1" eventType="touchUpInside" id="AA0-nZ-zYg"/>
                     </connections>
