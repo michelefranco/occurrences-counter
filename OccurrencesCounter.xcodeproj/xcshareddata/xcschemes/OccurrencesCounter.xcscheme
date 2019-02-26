@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B447C174222184E200B69970"
-               BuildableName = "OccurencesCounter.app"
-               BlueprintName = "OccurencesCounter"
-               ReferencedContainer = "container:OccurencesCounter.xcodeproj">
+               BuildableName = "OccurrencesCounter.app"
+               BlueprintName = "OccurrencesCounter"
+               ReferencedContainer = "container:OccurrencesCounter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B44E71A62221BCA500E4B06C"
-               BuildableName = "OccurencesCounterTests.xctest"
-               BlueprintName = "OccurencesCounterTests"
-               ReferencedContainer = "container:OccurencesCounter.xcodeproj">
+               BuildableName = "OccurrencesCounterTests.xctest"
+               BlueprintName = "OccurrencesCounterTests"
+               ReferencedContainer = "container:OccurrencesCounter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B447C174222184E200B69970"
-            BuildableName = "OccurencesCounter.app"
-            BlueprintName = "OccurencesCounter"
-            ReferencedContainer = "container:OccurencesCounter.xcodeproj">
+            BuildableName = "OccurrencesCounter.app"
+            BlueprintName = "OccurrencesCounter"
+            ReferencedContainer = "container:OccurrencesCounter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B447C174222184E200B69970"
-            BuildableName = "OccurencesCounter.app"
-            BlueprintName = "OccurencesCounter"
-            ReferencedContainer = "container:OccurencesCounter.xcodeproj">
+            BuildableName = "OccurrencesCounter.app"
+            BlueprintName = "OccurrencesCounter"
+            ReferencedContainer = "container:OccurrencesCounter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B447C174222184E200B69970"
-            BuildableName = "OccurencesCounter.app"
-            BlueprintName = "OccurencesCounter"
-            ReferencedContainer = "container:OccurencesCounter.xcodeproj">
+            BuildableName = "OccurrencesCounter.app"
+            BlueprintName = "OccurrencesCounter"
+            ReferencedContainer = "container:OccurrencesCounter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

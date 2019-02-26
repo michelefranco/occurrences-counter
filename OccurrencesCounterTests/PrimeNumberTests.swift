@@ -1,5 +1,5 @@
 import XCTest
-@testable import OccurencesCounter
+@testable import OccurrencesCounter
 
 class PrimeNumberTests: XCTestCase {
     
