@@ -57,7 +57,7 @@ There are a couple of approach for finding and counting them. They expect a prep
 This is the task of `Preprocessor` struct.
 ```swift
 struct Prepreprocessor {
-    let symbolSkipped = "_,';?!.:()\\[\\]{}*<>/\""
+    let symbolSkipped = "_,\';?!.:()\\[\\]{}*<>/\""
 
     func words(from text: String) -> [String] {
         var preprocessingOutcome = text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
@@ -77,7 +77,7 @@ Specifically, it goes through the text for three times:
 one for replacing symbol and then for the separation of words by whitespaces and new Lines.
 
 There is no way to complete this task in a more efficient way, just because solutions need to scan the entire file.
-Therefore, the complexity in time of the function `words`  is  $\Omicron(n)$.
+Therefore, the complexity in time of the function `words`  is  $`\Omicron(n)`$.
 
 
 #### Model
@@ -230,11 +230,11 @@ It can be decomposed in:
 2. Calculate occurrences for words reducing the sequence given from the `Preprocessor`. This task is performed from the private `map` function.
 3.  Since the outcome from the previous step is a  `[String: Int]` Dictionary, it's transformed to a Set properly. It should be more clear why `WordOccurrence` needs to be conform to Hashable.
 
-The complexity in time to have occurrences by word is $\Omicron(n)$. In fact, each step has a linear complexity in time. 
+The complexity in time to have occurrences by word is $`\Omicron(n)`$. In fact, each step has a linear complexity in time. 
 
 1. Complexity in time has been discussed in words function of Preprocessor.
 2. The private `map` function uses the `reduce`  and , as written in the Apple Documentation, it has a linear complexity in time.
-3. Converting a dictionary to another one requires to read whole keys, so it's $\Omicron(n)$ too.
+3. Converting a dictionary to another one requires to read whole keys, so it's $`\Omicron(n)`$ too.
 
 Since a manager handles a single text, we can store the set in an instance variable in order to avoid recalculating occurrences each time.
 
