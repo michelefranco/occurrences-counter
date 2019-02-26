@@ -134,6 +134,23 @@ class WordOccurrenceReducerTests: XCTestCase {
         XCTAssertEqual(result, expected, "The result is not \(expected)")
     }
     
+    func testTwoOccurrencesApostrophe() {
+        let input = "We're young"
+        self.manager = WordOccurrenceReducer(text: input)
+        let result = manager.occurrences()
+        
+        var expected = Set<WordOccurrence>()
+        let firstOccurrence = WordOccurrence(word: "young", occurrence: 1)
+        let secondOccurrence = WordOccurrence(word: "we", occurrence: 1)
+        let thirdOccurrence = WordOccurrence(word: "re", occurrence: 1)
+        expected.insert(firstOccurrence)
+        expected.insert(secondOccurrence)
+        expected.insert(thirdOccurrence)
+
+        
+        XCTAssertEqual(result, expected, "The result is not \(expected)")
+    }
+    
     func testTwoOccurrencesDecrescentOrder() {
         let input = "one One Two"
         self.manager = WordOccurrenceReducer(text: input)
