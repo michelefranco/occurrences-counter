@@ -55,7 +55,7 @@ final class WordOccurrenceFilterer: WordOccurrenceManager {
         var result = [String: Int]()
         for word in words  {
             if !word.isEmpty && !result.keys.contains(word) {
-            let occurrence = words.filter { $0 == word }.count
+                let occurrence = words.filter { $0 == word }.count
                 result[word] = occurrence
             }
         }
