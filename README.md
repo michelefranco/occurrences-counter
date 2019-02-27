@@ -196,7 +196,7 @@ They mainly differ in the given outcome. Indeed, they give as result:
 - An unordered set
 - A sequence ordered by the input `Order`.
 
-The core of the manager lives in its private functions.Firstly, let's focus our attention on:
+The core of the manager lives in its private functions. Let's focus our attention on:
 
 ```swift
 final class WordOccurrenceReducer: WordOccurrenceManager {
@@ -367,4 +367,33 @@ For this reason, it has worse performance than the first one.
 
 The complexity in time is $`\Omicron(n^2)`$. 
 
-Indeed, taking the worse case( that is, if a text is made of not equal words each others), the algorithm needs to scan words $`n^2`$ times. 
+Indeed, taking the worse case(that is, if a text is made of not equal words each others), the algorithm needs to scan words $`n^2`$ times. 
+
+
+## Technical organization of the OccurrenceCounter
+
+Few words about the organization of project and repository.
+
+#### Project's hierarchy
+Above there's the hierarchy of the project's folders. The organisation is very rigorous since each folder contains a macro task for the system. 
+
+![The hierarchy of the project](./readme_resources/project_hierarchy.png)
+
+Hence, files considered as utility (as Preprocessor is) are inserted in `Supporting Files` while managers are into a folder named `Word Occurrence Manager` since a clear separation of files produces better vision of the project and tasks.
+
+#### The Developer Life cycle: Branching, Merging, Committing, Pushing
+A very self explained title, developers are literally addicted to repositories. They can save the developer’s Life in some circumstances. 
+
+Therefore, mastering the Git Flow could be a free pass to the Heaven. Generally speaking, it should be a one-to-one relationship between features and branches. There are many cases in which developers could modify same things concurrently, and to use branches is the best tool for having a personal state of application. Once job has been terminated, it’s time for merging and then committing to produce a current snapshot of the product. The following image is a piece of history from OccurrencesCounter repository. 
+
+![The hierarchy of the project](./readme_resources/repo.png)
+
+
+
+## Conclusion
+
+We discover solutions for the retrieving of occurrences of words in a text. It has been discussed two different solutions deeply, trying to examine pros and cons of approaches. 
+
+`Developers should be open-minded`. So probably it could be severeal other implementations that can fit into this problem with better performance. 
+
+For any other solution, let's have a chat :)  
