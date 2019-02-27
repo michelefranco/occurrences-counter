@@ -285,3 +285,86 @@ In few words, it starts by invoking `occurrences(with order: Order)` .
 Depending on the input parameter, the manager stores the proper sorting in two different variables, one for the each order. This approach allows to calculate one time a crescent or decrescent version of the words set, and it could be considered an optimisation. 
 
 This is the main solution reputed as more elegant than others adopted to solve the problem. Higher-order functions contribute to have less and understandable code. 
+
+#### WordOccurrenceFilterer
+
+The other solution is less efficient than the WordOccurrenceReducer's implementation.  Because of the detailed discussion about the manager above, it will just be explained the main difference between the two managers. 
+Below there is the code of WordOccurrenceFilterer:
+
+```swift
+import Foundation
+
+final class WordOccurrenceFilterer: WordOccurrenceManager {
+    private let text: String
+    
+    private lazy var occurrencesSet: Set<WordOccurrence> = {
+        self.calculateOccurrences(from: self.text)
+    }()
+
+    private lazy var occurrencesCrescent: [WordOccurrence] = {
+        return self.occurrencesSet.sorted { $0.occurrence < $1.occurrence }
+    }()
+
+    private lazy var occurrencesDecrescent: [WordOccurrence] = {
+        return self.occurrencesSet.sorted { $0.occurrence > $1.occurrence }
+    }()
+
+    init(text: String) {
+        self.text = text
+    }
+
+    // MARK: Public functions
+
+    func occurrences() -> Set<WordOccurrence> {
+        return  self.occurrencesSet
+    }
+
+    func occurrences(with order: Order) -> [WordOccurrence] {
+        let orderedOccurrences: [WordOccurrence]
+
+        switch order {
+        case .crescent:
+            orderedOccurrences = self.occurrencesCrescent
+        case .decrescent:
+            orderedOccurrences = self.occurrencesDecrescent
+        }
+
+        return orderedOccurrences
+
+    }
+
+    // MARK: Private functions
+    
+    private func calculateOccurrences(from text: String) -> Set<WordOccurrence> {
+        let words = Prepreprocessor().words(from: text)
+        let dictionary = self.map(from: words)
+        var result = Set<WordOccurrence>()
+        dictionary.forEach { word, occurrence in
+            let wordOccurrences = WordOccurrence(word: word, occurrence: occurrence)
+            result.insert(wordOccurrences)
+        }
+
+        return result
+    }
+    
+    private func map(from words: [String]) -> [String: Int] {
+        var result = [String: Int]()
+        for word in words {
+            if !word.isEmpty && !result.keys.contains(word) {
+                let occurrence = words.filter { $0 == word }.count
+                result[word] = occurrence
+            }
+        }
+
+    return result
+    }
+}
+```
+
+As it could be noticed, managers look like pretty the same. 
+The only differ in the private `map` function; specifically, this new manager uses filtering elements instead of composing the set in one iteration of words.
+For this reason, it has worse performance than the first one.
+
+The complexity in time is $`\Omicron(n^2)`$. 
+
+Indeed, taking the worse case( that is, if a text is made of not equal words each others), the algorithm needs to scan words $`n^2`$ times. 
