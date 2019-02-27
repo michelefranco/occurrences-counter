@@ -393,4 +393,4 @@ We discover solutions for the retrieving of occurrences of words in a text. It h
 
 `Developers should be open-minded`. So probably it could be severeal other implementations that can fit into this problem with better performance. 
 
-For any other solution, let's have a chat ✌🏼  
+For any other solution, let's have a chat :)
