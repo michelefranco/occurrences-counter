@@ -24,6 +24,8 @@
 		B4A4313422245B74003F69F5 /* WordOccurrenceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4313322245B74003F69F5 /* WordOccurrenceReducer.swift */; };
 		B4AAB9802223E90300DB3645 /* WordOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AAB97F2223E90300DB3645 /* WordOccurrenceViewController.swift */; };
 		B4AAB9822223E97300DB3645 /* WordOccurrence.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AAB9812223E97300DB3645 /* WordOccurrence.xib */; };
+		B4B91B0C2225CEE7008174CD /* WordOccurrenceFilterer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B91B0B2225CEE7008174CD /* WordOccurrenceFilterer.swift */; };
+		B4B91B0E2225D081008174CD /* WordOccurrenceFiltererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B91B0D2225D081008174CD /* WordOccurrenceFiltererTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		B4A4313322245B74003F69F5 /* WordOccurrenceReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceReducer.swift; sourceTree = "<group>"; };
 		B4AAB97F2223E90300DB3645 /* WordOccurrenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceViewController.swift; sourceTree = "<group>"; };
 		B4AAB9812223E97300DB3645 /* WordOccurrence.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordOccurrence.xib; sourceTree = "<group>"; };
+		B4B91B0B2225CEE7008174CD /* WordOccurrenceFilterer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceFilterer.swift; sourceTree = "<group>"; };
+		B4B91B0D2225D081008174CD /* WordOccurrenceFiltererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOccurrenceFiltererTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				B44E71AB2221BCA500E4B06C /* Info.plist */,
 				B44E71C12222391700E4B06C /* PrimeNumberTests.swift */,
 				B44E71A92221BCA500E4B06C /* WordOccurrenceReducerTests.swift */,
+				B4B91B0D2225D081008174CD /* WordOccurrenceFiltererTests.swift */,
 			);
 			path = OccurrencesCounterTests;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			children = (
 				B44E71B32221E18A00E4B06C /* WordOccurrenceManager.swift */,
 				B4A4313322245B74003F69F5 /* WordOccurrenceReducer.swift */,
+				B4B91B0B2225CEE7008174CD /* WordOccurrenceFilterer.swift */,
 			);
 			path = "Word Occurrence Manager";
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				B44E71B822222F0C00E4B06C /* Preprocessor.swift in Sources */,
 				B44E71C42222395C00E4B06C /* Extensions.swift in Sources */,
 				B44E71B42221E18A00E4B06C /* WordOccurrenceManager.swift in Sources */,
+				B4B91B0C2225CEE7008174CD /* WordOccurrenceFilterer.swift in Sources */,
 				B44E71B62221E21F00E4B06C /* WordOccurrence.swift in Sources */,
 				B4AAB9802223E90300DB3645 /* WordOccurrenceViewController.swift in Sources */,
 			);
@@ -307,6 +314,7 @@
 			files = (
 				B44E71C22222391700E4B06C /* PrimeNumberTests.swift in Sources */,
 				B44E71AA2221BCA500E4B06C /* WordOccurrenceReducerTests.swift in Sources */,
+				B4B91B0E2225D081008174CD /* WordOccurrenceFiltererTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
